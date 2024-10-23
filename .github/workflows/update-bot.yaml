@@ -1,10 +1,10 @@
-# Derived from https://pixi.sh/dev/advanced/updates_github_actions/#how-to-use
 name: update-bot
 
 on:
   workflow_dispatch:
-#   schedule:
-#     - cron: 0 5 1 * *
+  # Set the schedule, for example every week at 8:00am on Monday
+  schedule:
+    - cron: 0 8 * * 1
 
 permissions:
   contents: write
