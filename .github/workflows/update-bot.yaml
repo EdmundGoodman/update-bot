@@ -15,16 +15,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: astral-sh/setup-uv@v3
+
       - run: |
-          uv lock
+          echo "\`\`\`" > uv_output.md
+          uv lock &>> uv_output.md
+          echo "\`\`\`" >> uv_output.md
+
       - name: Create pull request
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: Update uv lockfile
           title: Update uv lockfile
-          branch: update-pixi
+          body-path: uv_output.md
+          branch: update-uv
           base: main
           labels: install
           delete-branch: true
