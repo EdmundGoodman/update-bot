@@ -1,0 +1,31 @@
+# Derived from https://pixi.sh/dev/advanced/updates_github_actions/#how-to-use
+name: update-bot
+
+on:
+  workflow_dispatch:
+#   schedule:
+#     - cron: 0 5 1 * *
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v3
+      - run: |
+          uv lock
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: Update uv lockfile
+          title: Update uv lockfile
+          branch: update-pixi
+          base: main
+          labels: install
+          delete-branch: true
+          add-paths: uv.lock

@@ -1,0 +1,22 @@
+version = 1
+requires-python = ">=3.10"
+
+[[package]]
+name = "requests"
+version = "2.0.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/1c/8e/376c93bb72bdae6a754797b8e31370df1e996e8b7dcc928e66691dbf611a/requests-2.0.1.tar.gz", hash = "sha256:8cfddb97667c2a9edaf28b506d2479f1b8dc0631cbdcd0ea8c8864def59c698b", size = 412648 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/8f/ea/140f18072bbcd81885a9490abb171792fd2961fd7f366be58396f4c6d634/requests-2.0.1-py2.py3-none-any.whl", hash = "sha256:f4ebc402e0ea5a87a3d42e300b76c292612d8467024f45f9858a8768f9fb6f6e", size = 439330 },
+]
+
+[[package]]
+name = "update-bot"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "requests" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "requests", specifier = "<2.1" }]
