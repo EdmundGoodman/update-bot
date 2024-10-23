@@ -8,7 +8,7 @@ At time of writing (23rd October 2024), Dependabot does not support `uv` as a
 package ecosystem. However, the behaviour of PRs to version bump dependencies,
 especially relating to security vulnerabilities, is still very desirable.
 
-Whilst there is [ongoing work to support this](dependabot/dependabot-core#10039),
+Whilst there is [ongoing work to support this](https://github.com/dependabot/dependabot-core/issues/10039),
 it is not ready yet. There are also some other solutions around this, such as
 using an alternative like [Renovate](https://github.com/renovatebot/renovate),
 but this also has compromises such as requiring self hosting.
