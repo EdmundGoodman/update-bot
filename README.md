@@ -9,8 +9,9 @@ package ecosystem. However, the behaviour of PRs to version bump dependencies,
 especially relating to security vulnerabilities, is still very desirable.
 
 Whilst there is [ongoing work to support this](https://github.com/dependabot/dependabot-core/issues/10039),
-it is not ready yet. There are also some other solutions around this, such as
-using an alternative like [Renovate](https://github.com/renovatebot/renovate),
+it is not ready yet. There are also some other solutions around this suggested
+[in the uv docs](https://docs.astral.sh/uv/guides/integration/dependency-bots/) for this,
+such as using an alternative like [Renovate](https://github.com/renovatebot/renovate),
 but this also has compromises such as requiring self hosting.
 
 In the meantime, a small GitHub Actions workflow to approximate the
