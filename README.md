@@ -49,7 +49,7 @@ jobs:
 
       - run: |
           echo "\`\`\`" > uv_output.md
-          uv lock &>> uv_output.md
+          uv lock --update &>> uv_output.md
           echo "\`\`\`" >> uv_output.md
 
       - name: Create pull request
