@@ -1,7 +1,6 @@
 name: update-bot
 
 on:
-  push:
   workflow_dispatch:
   # Set the schedule, for example every week at 8:00am on Monday
   schedule:
@@ -20,7 +19,9 @@ jobs:
       - uses: astral-sh/setup-uv@v3
 
       - run: |
-          uv lock --update
+          echo "\`\`\`" > uv_output.md
+          uv lock --upgrade &>> uv_output.md
+          echo "\`\`\`" >> uv_output.md
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v7
