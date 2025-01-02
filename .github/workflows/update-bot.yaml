@@ -20,7 +20,7 @@ jobs:
 
       - run: |
           echo "\`\`\`" > uv_output.md
-          uv lock --upgrade 2>&1 | tee uv_output.md
+          uv lock --upgrade 2>&1 | tee -a uv_output.md
           echo "\`\`\`" >> uv_output.md
 
       - name: Create pull request
