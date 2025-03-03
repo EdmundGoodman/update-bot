@@ -1,4 +1,4 @@
-!!! `uv` support for Dependabot is now [in beta](https://github.com/dependabot/dependabot-core/issues/10478#issuecomment-2691330949), so this project is deprecated !!!
+***`uv` support for Dependabot is now [in beta](https://github.com/dependabot/dependabot-core/issues/10478#issuecomment-2691330949), so this project is deprecated***
 
 # Update bot
 
